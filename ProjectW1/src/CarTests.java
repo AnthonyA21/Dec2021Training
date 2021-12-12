@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class CarTests {
@@ -6,6 +7,8 @@ class CarTests {
 	public void canBuildCar() {
 		Car testCar = new Car("Corvette");
 		testCar.engine.start();
+		Assertions.assertNotNull(testCar.model);
+		Assertions.assertEquals("Corvette", testCar.model);
 	}
 
 }
