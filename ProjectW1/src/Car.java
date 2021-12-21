@@ -1,15 +1,10 @@
 
-public class Car {
-	private int odometer;
+public class Car extends Vehicle {
 	LargeEngine engine;
 	String model;
 
 	public Car(String carModel) {
 		engine = new LargeEngine();
 		model = carModel;
-	}
-
-	public int getOdometer() {
-		return this.odometer;
 	}
 }
