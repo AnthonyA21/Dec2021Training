@@ -6,6 +6,8 @@ import org.testng.annotations.Test;
 
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
+import com.opencsv.bean.CsvToBean;
+import com.opencsv.bean.HeaderColumnNameMappingStrategy;
 import com.opencsv.exceptions.CsvException;
 
 import framework.ConfigurationProvider;
@@ -47,5 +49,27 @@ public class JavaIOTests {
 		} catch (FileNotFoundException e2) {
 			e2.printStackTrace();
 		}
+	}
+	
+	@Test
+	public void canPopulateBeanWithCsvData() {
+		
+		String expectedMake = "Yamaha";
+		try {
+			CSVReader csvReader = new CSVReader(new FileReader("src/test/resources/basses.csv"));
+			HeaderColumnNameMappingStrategy<BassGuitar> beanStrategy = new HeaderColumnNameMappingStrategy<BassGuitar>();
+			beanStrategy.setType(BassGuitar.class);
+			CsvToBean<BassGuitar> csvToBean = new CsvToBean<BassGuitar>();
+			
+			csvToBean.setCsvReader(csvReader);
+			csvToBean.setMappingStrategy(beanStrategy);
+			List<BassGuitar> bassGuitars = csvToBean.parse();
+			
+			Assert.assertEquals(bassGuitars.get(5).getMake(), expectedMake);
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
 	}	
 }
