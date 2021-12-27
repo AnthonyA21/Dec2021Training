@@ -124,7 +124,7 @@ Automationtesting.com Test Plan
 				 Smoke Test. If any smoke test fails, the build is rejectred and sent back to development.
 
 			3.2.1.3 Level 2a - Bug Regression Testing
-				-Every bug that was “Open” during the previous build, but marked as “Fixed, Ready for Retest” for the current
+				-Every bug that was â€œOpenâ€� during the previous build, but marked as â€œFixed, Ready for Retestâ€� for the current
 				 build under test, will need to be regressed, or re-tested.  Once the smoke test is completed, all resolved
 				 bugs need to be regressed.  It should take between 5 minutes to 1 hour to regress most bugs.
 
@@ -191,12 +191,12 @@ Automationtesting.com Test Plan
 		-Bug find rate indicates a decreasing trend prior to Zero Bug Rate (no new Sev. 1/2/3 bugs found).
 		-Bug find rate remains at 0 new bugs found (Severity 1/2/3) despite a constant test effort across 3 or more days.
 		-Bug severity distribution has changed to a steady decrease in Sev. 1 and 2 bugs discovered.
-		-No ‘Must Fix’ bugs remaining prior despite sustained testing.
+		-No â€˜Must Fixâ€™ bugs remaining prior despite sustained testing.
 	
 4. Assumptions/Risks
 	4.1 Assumptions
 		 -For User Acceptance testing, the Developer team has completed unit, system and integration testing and 
-		  met all the Requirement’s (including quality requirements) based on Requirement Traceability Matrix.
+		  met all the Requirementâ€™s (including quality requirements) based on Requirement Traceability Matrix.
 		  User Acceptance testing will be conducted by End-users
 		 -Test results will be tracked and reported daily using Jira. Script failures, along with supporting evidence, 
 		  will be sesent to Developer through Jira.
@@ -211,7 +211,7 @@ Automationtesting.com Test Plan
 		-Experience of previous similar projects and the risks that did happen and how they were handled
 		-Third party products and services, such as payment processors and product suppliers
 		-New versions of interfacing or component software 
-		-The test team’s ability to use any new tools or technologies necessary for the test effort. 
+		-The test teamâ€™s ability to use any new tools or technologies necessary for the test effort. 
 		-Working with teams in multiple locations and some team members working remotely
 		-Schedule slippage and its impact on the test schedule
 		-Poor documenation for modules, components, or other deliverables
