@@ -1,0 +1,35 @@
+1. Page: /text-box. Write a selector that will return the ‘Full Name’ textboxusing the ID attribute. Hint: This element has the ‘input’ tag.
+$("input[id='userName']")
+
+2. Page: /buttons. Write a selector that will return all 3 buttons shown below.
+$$("button[class='btn btn-primary'")
+
+3.Page:/buttons. Write a selector that will return the span element in the footer.
+$("div[id='app'] > footer > span")
+
+4. Page:/menu.Write a selector that will return the 3 listitem elements in the unordered list.
+$$("ul[id='nav'] > li:nth-child(2) > ul")
+Note: Works, but not a good solution because it's dependant on relative nth-child selector
+Menu has href anchor tag with value of "#" but couldn't figure out how to make this work if it can.
+$$("ul[id='nav'] > a[href='#'] > ul")
+Although that value of "#" isn't very unique so possiblye debatable on whether it'd be good 
+to use or not
+
+5. Page: /select-menu. Write a selector that will get the option element where value = 4.
+$("select[id='oldSelectMenu'] > option[value='4']")
+
+6. Page: /slider. Write the JavaScript to get the value for the element with id=sliderValue.
+document.querySelector('#sliderValue').value
+Note: I have no idea why but this did *not* work when using the dollar sign shortcut for 
+document.querySelector().
+$('#sliderValue').value <- This kept returning undefined, in both Chrome and Firefox.
+
+Alternatively, since the question just mentions JavaScript, the following could be used as well:
+document.getElementById('sliderValue').value
+
+7. Page: /text-box. Write the JavaScript to seet the value for the element with id=username.
+document.querySelector("#userName").value = "Test Text"
+
+Similar to #6, this did not work with the dollar sign shortcut for querySelector(). 
+On a related note, document.getElementById('userName').value = 'Test Text' would 
+also work here as an alternate Javascript solution
