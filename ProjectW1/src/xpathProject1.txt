@@ -1,0 +1,30 @@
+1. Page: /text-box. Write the xpath that will return the ‘Full Name’textbox using the ID attribute. Hint: This element has the ‘input’tag.
+$x("//input[@id='userName']")
+
+2. Page: /buttons. Write the xpath that will return all elements on the page with the ‘button’tag.
+Note: this one wasn't entirely clear to me. There is a 4th button on this page:
+<button class="navbar-toggler" type="button"><span class="navbar-toggler-icon"></span></button>
+If the results should include this button as well, the following XPath can be used:
+$x("//button")
+If it's supposed to return the same results as the CSS exercise, this XPath can be used:
+$x("//button[@class='btn btn-primary']")
+
+3. Page: /webtables. Write the xpath that will return the div with text of ‘Vega’. Ensure to narrow the scope of your xpath to the ReactTable and 
+ensure that your xpath is limited to returning cells only. Cells in this table have the class ‘rt-td’. Hint: You must use “Vega” in your xpath.
+This is not a good solution and probably not correct, but it's the closest I could get:
+$x("//div[@class='ReactTable -striped -highlight']/div[@class='rt-table']/div[@class='rt-tbody']/div[@class='rt-tr-group']/div[@class='rt-tr -odd']/div[@class='rt-td' and contains(., 'Vega')]")
+
+4. Page: /radio-button.Write the xpath that will return the parent element for the radio button with id=’impressiveRadio’.
+$x("//*[@id='impressiveRadio']/parent::div")
+Note: $x("//*[@id='impressiveRadio']/parent::*") could work in this specific case as well, but probably better to use div
+to be more precise.
+
+5. Page: /radio-button. Write the xpath that will return all DIV ancestors for the radio button with id=’impressiveRadio’.
+$x("//*[@id='impressiveRadio']/ancestor::div")
+
+6. Page: /radio-button: Write the xpath that will return the sibling for the radio button with id=’impressiveRadio’. Do not use the sibling axes. 
+Navigate to the parent element then down to the sibling instead.
+$x("//*[@class='col-12 mt-4 col-md-6']/child::div[1]/child::div[@class='custom-control custom-radio custom-control-inline'][1]")
+
+7. Page: /buttons. Write the xpath that will return all buttons containing the value “Click”.
+$x("//button[contains(text(),'Click')]")
