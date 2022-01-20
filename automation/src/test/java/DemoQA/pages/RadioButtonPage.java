@@ -52,11 +52,7 @@ public class RadioButtonPage extends PageObjectBase {
 			default:
 				break;
 		}
-//		if (label.equals("Yes")) {
-//			pageYesRadioButton.select(label);
-//		} else if (label.equals("Impressive")) {
-//			
-//		} else if 
+    
 		return this;
 	}
 	
@@ -64,10 +60,6 @@ public class RadioButtonPage extends PageObjectBase {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("text-success")));		
 		return pageResultText.getSelected();
 	}
-	
-//	public boolean isRadioEnabled() {
-//		return pageNoRadioButton.isEnabled();
-//	}
 
 	public RadioButtonPage navigate() {
 		this.driver.navigate().to(url);

@@ -2,6 +2,8 @@ package framework;
 
 import org.openqa.selenium.WebElement;
 
+import DemoQA.pages.LinksPage;
+
 public class Hyperlink {
 	private WebElement mappedElement;
 

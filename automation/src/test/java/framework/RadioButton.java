@@ -18,8 +18,8 @@ public class RadioButton {
 		return this.mappedElement.getText();
 	}
 	
-//	public boolean isEnabled() {
-//		return this.mappedElement.isEnabled();
-//	}
+	public boolean isEnabled() {
+		return this.mappedElement.isEnabled();
+	}
 	
 }

@@ -4,9 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-
 import framework.OldStyleDropdownList;
-import framework.RadioButton;
 import theInternet.pages.PageObjectBase;
 
 public class SelectPage extends PageObjectBase {
@@ -14,9 +12,6 @@ public class SelectPage extends PageObjectBase {
 	
 	@FindBy(how=How.ID, using="oldSelectMenu")
 	private WebElement oldSelectElement;
-	
-	//@FindBy(how=How.ID, using="linkResponse")
-	//private WebElement linkResponseElement;
 	
 	OldStyleDropdownList pageSelectMenu = new OldStyleDropdownList(oldSelectElement);
 	
@@ -40,6 +35,5 @@ public class SelectPage extends PageObjectBase {
 		this.driver.navigate().to(url);
 		return this;
 	}
-	
 
 }

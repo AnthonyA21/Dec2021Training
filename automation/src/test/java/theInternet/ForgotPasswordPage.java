@@ -1,37 +1,35 @@
-package theInternet.pages;
+package theInternet;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 
-import framework.Textbox;
+import theInternet.pages.PageObjectBase;
 
 public class ForgotPasswordPage extends PageObjectBase {
 	public final static String url = "http://the-internet.herokuapp.com/forgot_password";
-	
+
+	private WebDriver driver;
+
 	@FindBy(how=How.ID, using="email")
-	private WebElement emailAddressElement;
+	private WebElement emailAddressTextbox;
 
 	@FindBy(how=How.ID, using="form_submit")
 	private WebElement retrievePasswordButton;
 
 	public ForgotPasswordPage(WebDriver driver) {
-	    super(driver);
+		super(driver);
 	}
 
 	public ForgotPasswordPage enterEmailAddress(String emailAddress) {
-		new Textbox(emailAddressElement).setValue(emailAddress);
+		emailAddressTextbox.sendKeys(emailAddress);
 		return this;
 	}
 
 	public InternalServerErrorPage clickRetrievePasswordButton() {
 		retrievePasswordButton.click();
 		return new InternalServerErrorPage(this.driver);
-	}
-
-	public ForgotPasswordPage navigate() {
-		this.driver.navigate().to(url);
-		return this ;
 	}
 }

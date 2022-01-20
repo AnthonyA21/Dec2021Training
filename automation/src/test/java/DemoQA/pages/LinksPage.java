@@ -35,6 +35,6 @@ public class LinksPage extends PageObjectBase {
 	
 	public String getResponseText() {
 		return linkResponseElement.getText();
-	}
+	}	
 
 }
