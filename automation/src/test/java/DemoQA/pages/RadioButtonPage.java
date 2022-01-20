@@ -48,10 +48,11 @@ public class RadioButtonPage extends PageObjectBase {
 				break;
 			case "No":
 				pageNoRadioButton.select(label);
+				break;
 			default:
 				break;
 		}
-
+    
 		return this;
 	}
 	
@@ -59,7 +60,6 @@ public class RadioButtonPage extends PageObjectBase {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("text-success")));		
 		return pageResultText.getSelected();
 	}
-	
 
 	public RadioButtonPage navigate() {
 		this.driver.navigate().to(url);
