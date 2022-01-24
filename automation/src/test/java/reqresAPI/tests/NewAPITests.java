@@ -113,7 +113,6 @@ public class NewAPITests {
 		
 		Assert.assertEquals(userDataList.size(), expectedListSize);
 		Assert.assertEquals(testUserObject.getFirst_name(), expectedName);
-				
 	}
 	
     @BeforeTest
