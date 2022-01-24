@@ -82,22 +82,19 @@ public class NewAPITests {
 	@Test 
 	public void get_single_user_and_deserialize() {
 		
-		UserData userData = new UserData();
 		String testName = "Janet";
+		UserData testUserObject = new UserData();
 		
-		String json = given().
-						when().
-					  		get("/users/{id}", 2).asString();
+		JsonPath jsonPath = given().
+							when().
+								get("/users/{id}", 2).
+							then().
+								statusCode(200).extract().body().jsonPath();
 		
-		JsonPath jsonPath = new JsonPath(json).setRootPath("data");
+		testUserObject = jsonPath.getObject("data", UserData.class);		
+		System.out.println(testUserObject.toString());		
 		
-		userData.setId(jsonPath.getInt("id"));
-		userData.setEmail(jsonPath.getString("email"));		
-		userData.setFirst_name(jsonPath.getString("first_name"));
-		userData.setLast_name(jsonPath.getString("last_name"));
-		userData.setAvatar(jsonPath.getString("avatar"));
-		
-		Assert.assertEquals(userData.getFirst_name(), testName);
+		Assert.assertEquals(testUserObject.getFirst_name(), testName);
 	}
 	
 
