@@ -92,7 +92,6 @@ public class NewAPITests {
 								statusCode(200).extract().body().jsonPath();
 		
 		testUserObject = jsonPath.getObject("data", UserData.class);		
-		System.out.println(testUserObject.toString());		
 		
 		Assert.assertEquals(testUserObject.getFirst_name(), testName);
 	}
