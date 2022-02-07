@@ -1,6 +1,7 @@
 package reqresAPI.tests;
 
 public class UserData {
+	
 	int id;
 	String email;
 	String first_name;
@@ -52,5 +53,4 @@ public class UserData {
 		return "UserData [id=" + id + ", email=" + email + ", first_name=" + first_name + ", last_name=" + last_name
 				+ ", avatar=" + avatar + "]";
 	}
-
 }
