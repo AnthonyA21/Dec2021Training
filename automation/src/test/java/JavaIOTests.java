@@ -2,6 +2,9 @@ import java.io.*;
 import java.util.*;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.opencsv.CSVReader;
@@ -71,5 +74,26 @@ public class JavaIOTests {
 			e.printStackTrace();
 		}
 
-	}	
+	}
+	
+	@Parameters({ "testStrParam1", "testStrParam2" })
+	@Test
+	public void canReadParametersFromXML(String testStrParam1, String testStrParam2) {
+		String expectedStr1 = "Test123", expectedStr2 = "This is a test.";
+		
+		Assert.assertEquals(testStrParam1, expectedStr1);
+		Assert.assertEquals(testStrParam2, expectedStr2);
+	}
+	
+	 @BeforeSuite  
+	 public void before_suite()  
+	 {  
+	     System.out.println("In BeforeSuite method.");  
+	 }
+	 
+	 @AfterSuite  
+	 public void after_suite()  
+	 {  
+	     System.out.println("In AfterSuite method.");
+	 }	 
 }

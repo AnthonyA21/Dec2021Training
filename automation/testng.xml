@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-  <test thread-count="5" name="Test">
-  </test> <!-- Test -->
+<suite name="Training Suite">
+	<test thread-count="4" name="Parallel Tests" parallel="methods">
+		<parameter name="testStrParam1" value="Test123" />
+		<parameter name="testStrParam2" value="This is a test." />
+		<classes>
+			<class name="JavaIOTests">
+				<methods>
+					<include name="canReadParametersFromXML" />
+					<include name="canReadCsvIntoHashMap" />
+					<include name="canReadBrowserTypeFromConfigFile" />
+					<include name="canPopulateBeanWithCsvData" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	<test name="Test" thread-count="5">
+		<classes>
+			<class name="seleniumDev.tests.SeleniumTests" />
+		</classes>
+	</test> <!-- Test -->
 </suite> <!-- Suite -->
