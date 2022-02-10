@@ -1,23 +1,30 @@
 import org.testng.annotations.Test;
-
 import org.testng.annotations.BeforeMethod;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 
-public class WebdriverTests {
+public class AmpegTests {
 	
   private WebDriver driver;
 
 @Test
-  public void canLaunchWebdriver() {
+  public void ensureArtistNameIsCorrect() {
 	  //Arrange
-
+	  String expectedName = "Bootsy Collins";
+	  
 	  //Act
+	  //Step 1 - go to home page
+	  String artistName = new HomePage(this.driver)
+			  .navigate()
+			  .clickProductsLink()
+			  .clickClassicSeries()
+			  .clickSVT810E()
+			  .getArtistName();
 	  
 	  //Assert
-	  Assert.assertNotNull(this.driver, "Webdriver did not launch.");
+	  Assert.assertEquals(artistName, expectedName);
   }
   
   @BeforeMethod
@@ -32,4 +39,5 @@ public class WebdriverTests {
 		  this.driver.quit();
 	  }
   }
+
 }
